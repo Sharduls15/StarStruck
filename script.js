@@ -1,11 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sidebarPlaceholder = document.getElementById('sidebar-placeholder');
-  
-  // Adjust path based on folder
-  const pathPrefix = window.location.pathname.includes("/years/") || window.location.pathname.includes("/categories/") ? "../" : "";
 
-  // Load sidebar dynamically
-  fetch(`${pathPrefix}sidebar.html`)
+  // Load sidebar from root-relative path
+  fetch('/sidebar.html')
     .then(response => response.text())
     .then(data => {
       sidebarPlaceholder.innerHTML = data;
@@ -18,14 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      // Highlight current page
-      const current = window.location.pathname.split("/").pop();
+      // Highlight current page and auto-expand dropdowns
+      const current = window.location.pathname.split("/").pop(); // e.g., "2023.html" or "best-film.html"
       document.querySelectorAll(".sidebar a").forEach(link => {
-        if (link.getAttribute("href") === current) {
+        const linkHref = link.getAttribute("href").split("/").pop(); // get last part of href
+        if (linkHref === current) {
           link.classList.add("active");
+
+          // Auto-expand parent submenu if exists
           const parentSubmenu = link.closest(".submenu");
           if (parentSubmenu) parentSubmenu.style.display = "block";
         }
       });
-    });
+    })
+    .catch(err => console.error("Failed to load sidebar:", err));
 });
