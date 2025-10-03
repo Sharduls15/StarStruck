@@ -8,32 +8,104 @@
 </head>
 <body>
   <div class="container">
+
+    <!-- Sidebar -->
     <aside class="sidebar">
       <h2>Awards</h2>
-      <div class="year">
-        <button class="year-btn">2023</button>
-        <div class="categories">
-          <a href="2023.html">Winners</a>
+
+      <div class="section">
+        <button class="toggle-btn">By Year</button>
+        <div class="submenu">
+          <a href="2023.html">2023</a>
+          <a href="2024.html">2024</a>
         </div>
       </div>
-      <div class="year">
-        <button class="year-btn">2024</button>
-        <div class="categories">
-          <a href="2024.html">Winners</a>
+
+      <div class="section">
+        <button class="toggle-btn">By Category</button>
+        <div class="submenu">
+          <a href="category-film.html">Best Film</a>
+          <a href="category-actor.html">Best Actor</a>
         </div>
       </div>
-      <a href="categories.html">By Category</a>
+
+      <a href="records.html" class="records-link">Records</a>
     </aside>
 
+    <!-- Main Content -->
     <main class="content">
       <h1>2023 Awards</h1>
-      <h2>Best Film</h2>
-      <p><strong>Winner:</strong> Film A</p>
-      <p><strong>Nominees:</strong> Film B, Film C, Film D</p>
 
-      <h2>Best Actor</h2>
-      <p><strong>Winner:</strong> Actor X</p>
-      <p><strong>Nominees:</strong> Actor Y, Actor Z</p>
+      <!-- Best Film -->
+      <section class="category">
+        <div class="winner">
+          <img src="images/filmA.jpg" alt="Film A Poster">
+          <h3>Film A</h3>
+          <p>Winner - Best Film</p>
+        </div>
+        <div class="nominees">
+          <div class="nominee">
+            <img src="images/filmB.jpg" alt="Film B">
+            <div class="nominee-info">
+              <strong>Film B</strong><br>Nominee
+            </div>
+          </div>
+          <div class="nominee">
+            <img src="images/filmC.jpg" alt="Film C">
+            <div class="nominee-info">
+              <strong>Film C</strong><br>Nominee
+            </div>
+          </div>
+          <div class="nominee">
+            <img src="images/filmD.jpg" alt="Film D">
+            <div class="nominee-info">
+              <strong>Film D</strong><br>Nominee
+            </div>
+          </div>
+          <div class="nominee">
+            <img src="images/filmE.jpg" alt="Film E">
+            <div class="nominee-info">
+              <strong>Film E</strong><br>Nominee
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Best Actor -->
+      <section class="category">
+        <div class="winner">
+          <img src="images/actorX.jpg" alt="Actor X">
+          <h3>Actor X</h3>
+          <p>Winner - Best Actor (Film A)</p>
+        </div>
+        <div class="nominees">
+          <div class="nominee">
+            <img src="images/actorY.jpg" alt="Actor Y">
+            <div class="nominee-info">
+              <strong>Actor Y</strong><br>Nominee (Film B)
+            </div>
+          </div>
+          <div class="nominee">
+            <img src="images/actorZ.jpg" alt="Actor Z">
+            <div class="nominee-info">
+              <strong>Actor Z</strong><br>Nominee (Film C)
+            </div>
+          </div>
+          <div class="nominee">
+            <img src="images/actorW.jpg" alt="Actor W">
+            <div class="nominee-info">
+              <strong>Actor W</strong><br>Nominee (Film D)
+            </div>
+          </div>
+          <div class="nominee">
+            <img src="images/actorV.jpg" alt="Actor V">
+            <div class="nominee-info">
+              <strong>Actor V</strong><br>Nominee (Film E)
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   </div>
 </body>
