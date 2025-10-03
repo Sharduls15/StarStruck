@@ -1,4 +1,4 @@
-/* Font (using Merriweather Serif as closest free alternative) */
+/* Font (Aptos Serif alternative) */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
@@ -60,7 +60,7 @@ body {
   margin-left: 15px;
 }
 
-/* Content Area */
+/* Content */
 .content {
   padding: 20px;
   flex: 1;
