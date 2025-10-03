@@ -5,12 +5,14 @@ body {
   margin: 0;
   font-family: 'Merriweather', serif;
   background: #f5f5f5;
+  height: 100vh;
 }
 
-/* Container: sidebar + main content */
+/* Container for sidebar + content */
 .container {
   display: flex;
   min-height: 100vh;
+  width: 100%;
 }
 
 /* Sidebar */
@@ -21,8 +23,10 @@ body {
   height: 100vh;
   padding: 15px;
   overflow-y: auto;
-  flex-shrink: 0; /* prevent shrinking in flex layout */
+  flex-shrink: 0;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
 }
 
 /* Sidebar headings */
@@ -38,9 +42,9 @@ body {
   color: white;
   text-decoration: none;
   margin: 5px 0;
-  padding: 5px;
+  padding: 6px 8px;
   border-radius: 4px;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 #sidebar-placeholder .sidebar a:hover {
@@ -50,9 +54,10 @@ body {
 #sidebar-placeholder .sidebar a.active {
   background: #007bff;
   font-weight: bold;
+  color: #fff;
 }
 
-/* Toggle buttons for dropdowns */
+/* Toggle buttons */
 #sidebar-placeholder .sidebar .toggle-btn {
   background: none;
   border: none;
@@ -60,12 +65,12 @@ body {
   font-weight: bold;
   cursor: pointer;
   margin: 5px 0;
-  padding: 5px;
+  padding: 6px 8px;
   width: 100%;
   text-align: left;
   font-size: 1em;
   border-radius: 4px;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 #sidebar-placeholder .sidebar .toggle-btn:hover {
@@ -78,11 +83,16 @@ body {
   margin-left: 15px;
 }
 
+#sidebar-placeholder .sidebar .submenu a {
+  font-size: 0.95em;
+  margin: 4px 0;
+}
+
 /* Main content */
 .content {
   flex: 1;
   padding: 20px;
-  min-width: 300px; /* prevent content from shrinking too much */
+  min-width: 300px;
 }
 
 /* Headings in content */
@@ -151,6 +161,20 @@ body {
   font-size: 0.9em;
 }
 
+/* Scrollbar for sidebar */
+#sidebar-placeholder .sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+#sidebar-placeholder .sidebar::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
+
+#sidebar-placeholder .sidebar::-webkit-scrollbar-track {
+  background-color: #222;
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .container {
@@ -159,6 +183,7 @@ body {
   #sidebar-placeholder .sidebar {
     width: 100%;
     height: auto;
+    position: relative;
   }
   .category {
     flex-direction: column;
